@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import '../style/header.css'
 
 const navItems = [
   {
@@ -26,29 +28,38 @@ const navItems = [
 ]
 
 export default function Header() {
-    return (
-        <header>
-            <h1>
-                <Link to="/">
-                    <img src="/images/index/logo.png" alt="Lunest 로고" />
-                </Link>
-            </h1>
-            <nav>
-                <ul>
-                    {navItems.map((item)=>(
-                        <li key={item.label}>
-                            {item.label}
-                            <ul>
-                                {item.sub.map((s)=>(
-                                    <li key={s.to}>
-                                        <Link to={s.to}>{s.label}</Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-        </header>
-    )
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <header
+      className='header'
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <div className='header-top'>
+        <h1 className='header-logo'>
+          <Link to="/">
+            <img src="/images/index/logo.png" alt="Lunest 로고" />
+          </Link>
+        </h1>
+        <ul className='gnb-main'>
+          {navItems.map((item) => (
+            <li key={item.label}>{item.label}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className={`gnb-sub ${isOpen ? 'active' : ''}`}>
+        {navItems.map((item) => (
+          <ul key={item.label} className='gnb-sub-list'>
+            {item.sub.map((s) => (
+              <li key={s.to}>
+                <Link to={s.to}>{s.label}</Link>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </header>
+  )
 }
