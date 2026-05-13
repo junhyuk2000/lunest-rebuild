@@ -1,0 +1,178 @@
+/* section1 */
+#section1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 구름 스타일 */
+.cloud {
+  position: absolute;
+  opacity: 0.6;
+  animation: cloudFloat 5s ease-in-out infinite;
+}
+
+.cloud1 img {
+  width: 600px;
+}
+
+.cloud2 img {
+  width: 900px;
+}
+
+.cloud3 img {
+  width: 700px;
+}
+
+.cloud4 img {
+  width: 650px;
+}
+
+/* 구름 각각의 위치 + 딜레이로 자연스러운 효과 */
+.cloud1 {
+  top: 0%;
+  left: 0%;
+  animation-delay: 0s;
+}
+
+.cloud2 {
+  top: 0%;
+  right: 0%;
+  animation-delay: 2s;
+}
+
+.cloud3 {
+  top: 50%;
+  left: 0%;
+  animation-delay: 4s;
+}
+
+.cloud4 {
+  top: 50%;
+  right: 0%;
+  animation-delay: 6s;
+}
+
+/* 구름이 좌우로 부드럽게 흔들리는 애니메이션 */
+@keyframes cloudFloat {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+/* 텍스트 영역 */
+.hero-text {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 텍스트 애니메이션 효과 */
+.floating-text {
+  width: 100%;
+  font-family: "Ownglyph_Memo_Okja-Rg", sans-serif;
+  font-size: 64px;
+  color: white;
+  animation: textFloat 4s ease-in-out infinite;
+  white-space: pre-line;
+  margin-left: 110px;
+  margin-bottom: 50px;
+  word-break: keep-all;
+}
+
+@keyframes textFloat {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+/* section2 */
+.slide {
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-box {
+  width: 500vw;
+  display: flex;
+}
+
+.slide img {
+  width: 100%;
+}
+
+.inner {
+  width: 100vw;
+  flex-shrink: 0;
+}
+
+.left_btn,
+.right_btn {
+  position: absolute;
+  z-index: 5;
+}
+
+.left_btn {
+  top: 35vh;
+  left: 5vw;
+}
+
+.right_btn {
+  top: 35vh;
+  right: 5vw;
+}
+
+.right_btn button,
+.left_btn button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.right_btn button:hover,
+.left_btn button:hover {
+  opacity: 0.4;
+}
+
+
+.indicator {
+  position: absolute;
+  top: 70vh;
+  left: 48vw;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  justify-content: space-around;
+}
+
+.ellipse {
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.choice {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  background: #999;
+}
