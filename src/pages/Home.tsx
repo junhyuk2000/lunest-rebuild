@@ -1,5 +1,6 @@
 import '../style/home.css'
 import Carousel from '../components/Carousel'
+import MoodSelector from '../components/MoodSelector'
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         </div>
       </section>
       <Carousel/>
+      <MoodSelector/>
     </div>
 )
 }

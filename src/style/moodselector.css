@@ -1,0 +1,30 @@
+.question {
+    width: 600px;
+    height: 100px;
+    color:#f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    font-size: 28px;
+    margin: 32px 72px;
+}
+
+.select-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.select-card {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 26px;
+    color:#f0f0f0;
+    gap: 16px;
+}
